@@ -6,6 +6,7 @@ public class Hotel implements Booking {
 	public IDatabase Database;
 	
 	public int getMiles(){
+		//Note this is a refused bequest.
 		return 0;
 	}
 	
