@@ -1,6 +1,8 @@
 package ExpediaTest;
 
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
 //This import is causing issues.
 //import java.time.Instant;
 import java.util.Date;
@@ -9,6 +11,7 @@ import java.util.List;
 
 import Expedia.*;
 
+import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -77,19 +80,17 @@ public class FlightTest {
 	@Test
 	public void TestThatFlightDoesGetNumberOfPassengers()
 	{
-		/*var mockDatabase = mocks.StrictMock<IDatabase>();
+		IDatabase mockDatabase = EasyMock.createMock(IDatabase.class);
+		ArrayList values = new ArrayList<String>();
+		for(int i = 0; i < 50; i++)
+			values.add("Bob");
 		
-		var values = new List<String>();
-		for(var i = 0; i < 50; i++)
-			values.Add("Bob");
+		mockDatabase.Passengers=values;
 		
-		Expect.Call(mockDatabase.Passengers).Return(values);
-		mocks.ReplayAll();
-		
-		var target = new Flight(Date.Now, Date.Now.AddDays(1), 0);
+		Flight target = new Flight(StartDate, EndDate, 0);
 		
 		target.Database = mockDatabase;
-		Assert.AreEqual(50, target.NumberOfPassengers);*/
+		assertEquals(50, target.NumberOfPassengers());
 	}
 	
 	@After
