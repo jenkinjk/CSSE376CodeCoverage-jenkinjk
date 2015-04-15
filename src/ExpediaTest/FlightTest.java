@@ -1,7 +1,7 @@
 package ExpediaTest;
 
 import static org.junit.Assert.*;
-
+//This import is causing issues.
 //import java.time.Instant;
 import java.util.Date;
 import java.util.LinkedList;
@@ -74,10 +74,10 @@ public class FlightTest {
 		Assert.assertEquals(300, target.getBasePrice(), 0.0001);
 	}
 	
-	/*@Test
+	@Test
 	public void TestThatFlightDoesGetNumberOfPassengers()
 	{
-		var mockDatabase = mocks.StrictMock<IDatabase>();
+		/*var mockDatabase = mocks.StrictMock<IDatabase>();
 		
 		var values = new List<String>();
 		for(var i = 0; i < 50; i++)
@@ -89,8 +89,8 @@ public class FlightTest {
 		var target = new Flight(Date.Now, Date.Now.AddDays(1), 0);
 		
 		target.Database = mockDatabase;
-		Assert.AreEqual(50, target.NumberOfPassengers);
-	}*/
+		Assert.AreEqual(50, target.NumberOfPassengers);*/
+	}
 	
 	@After
 	public void TearDown()
